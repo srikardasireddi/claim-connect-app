@@ -9,7 +9,7 @@ function App() {
     amount: ''
   });
 
-  // 🔴 IMPORTANT: This is your LIVE Backend URL from Render
+  // 🔴 LIVE Backend URL (Render)
   const API_URL = "https://claim-backend-a5e4.onrender.com/api/claims";
 
   useEffect(() => {
@@ -71,6 +71,7 @@ function App() {
           margin: 0 auto;
           padding: 40px 20px;
         }
+        /* HEADER */
         .main-header {
           text-align: center;
           color: white;
@@ -95,6 +96,7 @@ function App() {
           text-transform: uppercase;
           letter-spacing: 1px;
         }
+        /* LAYOUT */
         .content-wrapper {
           display: flex;
           gap: 30px;
@@ -105,6 +107,7 @@ function App() {
             flex-direction: column;
           }
         }
+        /* CARDS */
         .card {
           background: var(--card-bg);
           border-radius: 16px;
@@ -138,6 +141,7 @@ function App() {
           font-size: 1.5rem;
           color: var(--text-dark);
         }
+        /* FORM ELEMENTS */
         .form-group {
           margin-bottom: 20px;
         }
@@ -145,27 +149,47 @@ function App() {
           display: block;
           font-weight: 600;
           margin-bottom: 8px;
-          color: var(--text-dark);
+          color: #000000; /* Force Label Black */
           font-size: 0.9rem;
         }
+        
+        /* --- FORCE INPUT VISIBILITY --- */
         input {
           width: 100%;
           padding: 12px;
-          border: 2px solid #e5e7eb;
+          border: 2px solid #9ca3af;
           border-radius: 8px;
           font-size: 1rem;
-          transition: border-color 0.3s;
           box-sizing: border-box;
           
-          /* THIS FIXES THE INVISIBLE TEXT PROBLEM */
+          /* Force Text Color to Black */
           color: #000000 !important; 
           background-color: #ffffff !important;
+          -webkit-text-fill-color: #000000 !important; /* For Chrome/Safari */
+          opacity: 1 !important;
         }
+        
+        /* Override Autofill Colors */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px white inset !important;
+            -webkit-text-fill-color: #000000 !important;
+        }
+
+        input::placeholder {
+          color: #6b7280 !important;
+          opacity: 0.7;
+        }
+
         input:focus {
           outline: none;
           border-color: var(--primary-color);
           background-color: #ffffff !important;
         }
+        /* --------------------------- */
+
         .submit-btn {
           width: 100%;
           padding: 14px;
@@ -184,6 +208,7 @@ function App() {
         .submit-btn:active {
           transform: scale(0.98);
         }
+        /* TABLE */
         .table-container {
           overflow-x: auto;
         }
@@ -203,7 +228,7 @@ function App() {
         td {
           padding: 15px;
           border-bottom: 1px solid #f3f4f6;
-          color: var(--text-dark);
+          color: #000000; /* Force Table Text Black */
         }
         tr:last-child td {
           border-bottom: none;
@@ -212,8 +237,8 @@ function App() {
           background-color: #f9fafb;
         }
         .fw-bold { font-weight: 600; }
-        .text-muted { color: var(--text-light); font-size: 0.9rem; }
-        .amount { font-family: 'Courier New', monospace; font-weight: bold; }
+        .text-muted { color: #4b5563; font-size: 0.9rem; }
+        .amount { font-family: 'Courier New', monospace; font-weight: bold; color: #000; }
         .count-badge {
           background: #e5e7eb;
           padding: 4px 12px;
