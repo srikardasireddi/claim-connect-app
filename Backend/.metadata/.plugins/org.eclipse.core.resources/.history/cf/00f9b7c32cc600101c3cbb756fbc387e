@@ -1,0 +1,17 @@
+spring.application.name=claimapp
+
+# H2 Database Configuration
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=Srikar@2002
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+# Show SQL in console (Good for debugging)
+spring.jpa.show-sql=true
+
+# Enable H2 Console (to view DB in browser)
+spring.h2.console.enabled=true
+
+# Server Port
+server.port=8080
