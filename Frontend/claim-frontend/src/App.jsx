@@ -10,13 +10,17 @@ function App() {
     amount: ''
   });
 
+  // 1. Define the API URL (Your Live Render Backend)
+  const API_URL = "https://claim-backend-a5e4.onrender.com/api/claims";
+
   useEffect(() => {
     fetchClaims();
   }, []);
 
   const fetchClaims = async () => {
     try {
-      const response = await fetch('http://localhost:8088/api/claims');
+      // Updated to use live URL
+      const response = await fetch(API_URL);
       const data = await response.json();
       setClaims(data);
     } catch (error) {
@@ -27,7 +31,8 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8088/api/claims', {
+      // Updated to use live URL
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
